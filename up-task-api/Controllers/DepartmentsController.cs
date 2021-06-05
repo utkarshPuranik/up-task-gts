@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Http.Results;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +12,7 @@ using UP.Test.API.Models;
 namespace UP.Test.API.Controllers
 {
     [Route("api/[controller]")]
+    [EnableCors("AllowOrigin")]
     [ApiController]
     public class DepartmentsController : ControllerBase
     {

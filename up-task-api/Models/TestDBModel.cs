@@ -12,7 +12,7 @@ namespace UP.Test.API.Models
         public int DepartmentId { get; set; }
         [Column(TypeName="varchar(100)")]
         public string DepartmentName { get; set; }
-        public ICollection<Employee> Employees { get; set; }
+        //public ICollection<Employee> Employees { get; set; }
     }
 
     public class Employee

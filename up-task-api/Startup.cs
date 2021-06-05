@@ -29,6 +29,7 @@ namespace UP.IBM.Test.API
         {
             services.AddControllers();
             services.AddDbContext<TestDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("TestDBConnection")));
+            services.AddCors(c => c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,7 +43,7 @@ namespace UP.IBM.Test.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
