@@ -56,7 +56,8 @@ export default function App() {
   return (
     <Router>
       <div>
-        <Paper elevation={5}>
+        <Paper elevation={1}>
+          <h1>&nbsp;IBM GTS Task</h1>
           <Button color="inherit"><Link to="/">Home</Link></Button>
           <Button color="inherit"><Link to="/departments">Departments</Link></Button>
           <Button color="inherit"><Link to="/employees">Employees</Link></Button>

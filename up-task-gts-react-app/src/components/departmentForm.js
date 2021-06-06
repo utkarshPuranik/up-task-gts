@@ -9,13 +9,13 @@ const styles = theme => ({
     root: {
         '& .MuiTextField-root': {
             margin: theme.spacing(1),
-            minWidth: 230,
+            minWidth: 160,
         }
     },
     formControl: {
         margin: theme.spacing(1),
         padding: theme.spacing(5),
-        minWidth: 230,
+        minWidth: 160,
     },
     smMargin: {
         margin: theme.spacing(1)
