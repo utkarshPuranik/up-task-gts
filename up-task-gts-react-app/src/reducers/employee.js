@@ -1,16 +1,15 @@
-import { ACTION_TYPES } from '../actions/employee'
+import ACTION_TYPES from '../actions/actionTypes'
 const initialState = {
-    departmentList: [],
     employeeList: []
 }
 
 export const employeeReducer = (state = initialState, action) => {
     switch(action.type) {
-        case ACTION_TYPES.GET_ALL:
+        case ACTION_TYPES.GET_ALL_EMPLOYEES:
             return {
                 ...state,
                 employeeList: [...action.payload],
-                departmentList: []
+                // departmentList: []
             }
             
         default: return state;

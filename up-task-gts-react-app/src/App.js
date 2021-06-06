@@ -2,8 +2,10 @@
 // import './App.css';
 import Department from './components/department'
 import Employee from './components/employee'
+import Home from './components/home'
 import { store } from './actions/store'
 import { Provider } from 'react-redux'
+import { ToastProvider } from "react-toast-notifications";
 
 // function App() {
 //   return (
@@ -48,48 +50,41 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { Container, Button, Menu, MenuItem, Paper } from '@material-ui/core'
 
 export default function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/departments">Departments</Link>
-            </li>
-            <li>
-              <Link to="/employees">Employees</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+        <Paper elevation={5}>
+          <Button color="inherit"><Link to="/">Home</Link></Button>
+          <Button color="inherit"><Link to="/departments">Departments</Link></Button>
+          <Button color="inherit"><Link to="/employees">Employees</Link></Button>
+        </Paper>
         <Provider store={store}>
-          <Switch>
-            <Route path="/departments">
-              <Department />
-            </Route>
-            <Route path="/employees">
-              <Employee />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
+          <ToastProvider autoDismiss={true}>
+            <Container maxWidth="lg">
+              
+              <Switch>
+                <Route path="/departments">
+                  <Department />
+                </Route>
+                <Route path="/employees">
+                  <Employee />
+                </Route>
+                <Route path="/">
+                  <Home />
+                </Route>
+              </Switch>
+            </Container>
+          </ToastProvider>
         </Provider>
       </div>
     </Router>
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
+
 
 // function About() {
 //   return <h2>About</h2>;

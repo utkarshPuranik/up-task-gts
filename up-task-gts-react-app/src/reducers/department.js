@@ -1,15 +1,14 @@
-import { ACTION_TYPES } from '../actions/department'
+import ACTION_TYPES from '../actions/actionTypes'
 const initialState = {
     departmentList: [],
-    employeeList: []
 }
 
 export const departmentReducer = (state = initialState, action) => {
     switch(action.type) {
-        case ACTION_TYPES.GET_ALL:
+        case ACTION_TYPES.GET_ALL_DEPARTMENTS:
             return {
                 ...state,
-                employeeList: [],
+                // employeeList: [],
                 departmentList: [...action.payload]
             }
 
