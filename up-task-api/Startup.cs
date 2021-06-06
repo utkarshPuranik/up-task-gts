@@ -27,9 +27,9 @@ namespace UP.IBM.Test.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(c => c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
             services.AddControllers();
             services.AddDbContext<TestDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("TestDBConnection")));
-            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,18 +39,15 @@ namespace UP.IBM.Test.API
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
-            app.UseCors(options => 
-                options.WithOrigins("https://azup-ibm-test-app.azurewebsites.net")
+            string[] origins = { "https://azup-ibm-test-app.azurewebsites.net" };
+            app.UseCors(options =>
+                options.WithOrigins(origins)
                 .AllowAnyMethod()
                 .AllowAnyHeader());
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
