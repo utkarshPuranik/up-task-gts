@@ -22,6 +22,10 @@ Database should contain 2 tables:
 
 **Database** - Microsoft SQL Server
 
+**CI/CD** - GitHub Actions
+
+**Deployment** - Microsoft Azure Web App
+
 
 [IBMGTS]: https://www.ibm.com/case-studies/ibm-global-technology-services
 [Kyl]: https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjB0PCGx5T5AhWPfCsKHRqyBi8YABAAGgJzZg&ohost=www.google.com&cid=CAESbOD2KvFVhCBQDuq1RYZ2Z0Qh0iwhMfjhdQrR2M1stw6Z3ACyPIsP6UnOBtZqU5cGzHgJDf7k6hx7CAhSF2dYebrEfNj-lct7vocFvTiQM_GQYWqoGlzjx9tTF6Z810_i0OcWFJ2bXpYPvzZ2bg&sig=AOD64_2bB21jSSESrXSglvwSGS8jycDmKA&q&adurl&ved=2ahUKEwjizemGx5T5AhVB9zgGHf1yDDcQ0Qx6BAgDEAE
