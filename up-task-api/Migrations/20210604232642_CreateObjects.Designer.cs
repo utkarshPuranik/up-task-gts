@@ -8,7 +8,7 @@ using UP.Test.API.Models;
 
 namespace UP.Test.API.Migrations
 {
-    [DbContext(typeof(TestDBContext))]
+    [DbContext(typeof(CosmosTestDBContext))]
     [Migration("20210604232642_CreateObjects")]
     partial class CreateObjects
     {

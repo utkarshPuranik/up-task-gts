@@ -16,9 +16,9 @@ namespace UP.Test.API.Controllers
     [ApiController]
     public class DepartmentsController : ControllerBase
     {
-        private readonly TestDBContext _context;
+        private readonly CosmosTestDBContext _context;
 
-        public DepartmentsController(TestDBContext context)
+        public DepartmentsController(CosmosTestDBContext context)
         {
             _context = context;
         }

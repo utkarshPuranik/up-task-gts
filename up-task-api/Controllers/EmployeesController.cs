@@ -15,9 +15,9 @@ namespace UP.Test.API.Controllers
     [ApiController]
     public class EmployeesController : ControllerBase
     {
-        private readonly TestDBContext _context;
+        private readonly CosmosTestDBContext _context;
 
-        public EmployeesController(TestDBContext context)
+        public EmployeesController(CosmosTestDBContext context)
         {
             _context = context;
         }
@@ -26,7 +26,8 @@ namespace UP.Test.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {
-            return await _context.Employees.Include(x => x.Department).ToListAsync();
+            //return await _context.Employees.Include(x => x.Department).ToListAsync();
+            return await _context.Employees.ToListAsync();
         }
 
         // GET: api/Employees/5

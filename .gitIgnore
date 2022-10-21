@@ -351,3 +351,6 @@ MigrationBackup/
 up-task-api/.vs/UP.Task.API/DesignTimeBuild/.dtbcache.v2
 up-task-api/.vs/UP.Task.API/v16/.suo
 up-task-api/obj/Debug/net5.0/UP.Task.API.csproj.FileListAbsolute.txt
+/up-task-gts-react-app/build
+/up-task-gts-react-app/build.zip
+/up-task-gts-react-app/.vscode

@@ -7,7 +7,7 @@ using UP.Test.API.Models;
 
 namespace UP.Test.API.Migrations
 {
-    [DbContext(typeof(TestDBContext))]
+    [DbContext(typeof(CosmosTestDBContext))]
     partial class TestDBContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

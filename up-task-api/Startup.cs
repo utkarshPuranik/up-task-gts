@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UP.Test.API.Models;
+using Microsoft.OpenApi.Models;
 
 namespace UP.IBM.Test.API
 {
@@ -29,7 +30,11 @@ namespace UP.IBM.Test.API
         {
             services.AddCors(c => c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
             services.AddControllers();
-            services.AddDbContext<TestDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("TestDBConnection")));
+            services.AddDbContext<CosmosTestDBContext>(options => options.UseCosmos("https://localhost:8081", "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==", databaseName: "CosmosTestDB"));
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Test DB API", Version = "V1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +53,8 @@ namespace UP.IBM.Test.API
                 .AllowAnyMethod()
                 .AllowAnyHeader());
             app.UseAuthorization();
+            app.UseSwagger();
+            app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/v1/swagger.json", "Test DB API V1"));
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

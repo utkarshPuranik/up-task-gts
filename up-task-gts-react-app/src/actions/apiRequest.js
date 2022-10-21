@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseAPIURL = 'https://azup-ibm-test-api.azurewebsites.net/api/';
+const baseAPIURL = 'https://localhost:49155/api/';
 
 export default {
     Request(url = baseAPIURL){
